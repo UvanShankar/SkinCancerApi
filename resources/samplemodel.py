@@ -18,11 +18,11 @@ class SampleModel(Resource):
         user= UserModel.find_by_username(data['username'])
         print(user)
         if(user==None):
-            return "invalid username"
+            return {"message":{"answer" :"invalid username"}}
         row=user
         print ("Name: ",row.username, "Request:",row.requests)
         if row.requests>50:
-            return {"msg":"max limit reached convert to premium"}
+            return {"message":{"answer":"max limit reached convert to premium"}}
         UserModel.update_requests(data['username'])
         
         #user.save_to_db()
