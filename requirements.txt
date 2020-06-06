@@ -1,0 +1,12 @@
+Flask
+Flask-Cors
+Flask-JWT
+Flask-RESTful
+Flask-SQLAlchemy
+uwsgi
+numpy
+Pillow
+fastai
+https://download.pytorch.org/whl/cpu/torch-1.5.0%2Bcpu-cp37-cp37m-linux_x86_64.whl
+https://download.pytorch.org/whl/cpu/torchvision-0.6.0%2Bcpu-cp37-cp37m-linux_x86_64.whl
+gunicorn
