@@ -37,11 +37,11 @@ class UserRegister(Resource):
         
         data = UserRegister.parser.parse_args()
         if UserModel.find_by_username(data['username']):
-            return {"message": "A user with that username already exists","apicode":"111"}, 400
+            return {"message":{"answer" :"A user with that username already exists","apicode":"111"}}, 400
         if UserModel.find_by_emailId(data['emailId']):
-            return {"message": "A user with that emailId already exists","apicode":"121"}, 400
+            return {"message": {"answer":"A user with that emailId already exists","apicode":"121"}}, 400
         print(data['username'], data['password'], data['emailId'])
         user = UserModel(data['username'], data['password'], data['emailId'],data['premium'],0)
         user.save_to_db()
 
-        return {"message": "User created successfully.","apicode":"100"}, 201
+        return {"message":{"answer" :"User created successfully.","apicode":"100"}}, 201
