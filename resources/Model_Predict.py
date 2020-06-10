@@ -19,12 +19,12 @@ def predict(filename):
     'Melanoma',
     'Vascular lesions']
     img = open_image(os.path.join(app_root,filename))
-    abc=skin(filename)
-    if abc>0.5:
-        return {
-            "answer":"no skin"
-        }
-    os.remove(os.path.join(app_root,filename))
+    #abc=skin(filename)
+    #if abc>0.5:
+    #    return {
+    #        "answer":"no skin"
+    #    }
+    #os.remove(os.path.join(app_root,filename))
     learn  = load_learner(os.path.join( os.path.dirname(os.path.abspath(__file__)),'Skincancermodel'),"export.pkl")
     aa=p[learn.predict(img)[1]]
     bb=learn.predict(img)
@@ -36,6 +36,11 @@ def predict(filename):
     }
     print("predict______predict")
     print(predict_names)
+    abc=skin(filename)
+    if abc>0.5:
+        return {
+            "answer":"no skin"
+        }
     return predict_names
   
     
