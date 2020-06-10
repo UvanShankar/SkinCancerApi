@@ -19,7 +19,7 @@ def predict(filename):
     'Melanoma',
     'Vascular lesions']
     img = open_image(os.path.join(app_root,filename))
-    abc=isskin(filename)
+    abc=skin(filename)
     if abc>0.5:
         return {
             "answer":"no skin"
