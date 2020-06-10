@@ -3,6 +3,7 @@ from fastai.vision.image import open_image
 import os
 #import cv2
 import numpy as np
+from resources.isskin import isskin
 
 
 
