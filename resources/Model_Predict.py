@@ -6,6 +6,7 @@ import numpy as np
 
 
 
+
 def predict(filename):    
     app_root = os.path.dirname(os.path.abspath(__file__))
     app_root=os.path.join(app_root,'Skincancermodel')
@@ -64,7 +65,7 @@ def predict(filename):
         return {
             "answer":"no skin"
         }
-    os.remove(os.path.join(app_root,filename))
+    #os.remove(os.path.join(app_root,filename))
     learn  = load_learner(os.path.join( os.path.dirname(os.path.abspath(__file__)),'Skincancermodel'),"export.pkl")
     aa=p[learn.predict(img)[1]]
     bb=learn.predict(img)
