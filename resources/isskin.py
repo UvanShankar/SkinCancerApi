@@ -3,6 +3,8 @@ import numpy as np
 import os
 
 def skin(filename):
+    app_root = os.path.dirname(os.path.abspath(__file__))
+    app_root=os.path.join(app_root,'Skincancermodel')
     img=cv2.imread(os.path.join(app_root,filename))
     #converting from gbr to hsv color space
     img_HSV = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
